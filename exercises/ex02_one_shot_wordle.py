@@ -19,7 +19,7 @@ idx: int = 0  # alternate index of secret word
 
 while i < len(word_guess):
     if (word_guess[i] == secret_word[i]):
-        boxes += GREEN_BOX
+        boxes += GREEN_BOX  # adds a green box to the boxes string for getting a match
     else:
         while exists == (not True) and idx < len(secret_word):
             if (secret_word[idx] == word_guess[i]):
@@ -27,10 +27,10 @@ while i < len(word_guess):
             idx += 1
         idx = 0
         if exists == (True):
-            boxes += YELLOW_BOX
+            boxes += YELLOW_BOX  # adds a yellow box to the boxes string for getting a matching letter in the wrong place
             exists = False
         else:
-            boxes += WHITE_BOX
+            boxes += WHITE_BOX  # adds a white box to the boxes string for the letter not matching any character in the secret word
             exists = False
     i += 1
 print(boxes)
